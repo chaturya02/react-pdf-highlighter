@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: #003f7f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 80px);
+}
+
+.pdf-section {
+  flex: 1;
+  border-right: 2px solid #e0e0e0;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.analysis-section {
+  flex: 1;
+  background-color: white;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.pdf-viewer-container {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.pdf-content {
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.highlighted {
+  background-color: yellow;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.analysis-content {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  color: #333;
+}
+
+.analysis-content h2 {
+  color: #003f7f;
+  border-bottom: 2px solid #003f7f;
+  padding-bottom: 0.5rem;
+}
+
+.reference {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 1px solid #1976d2;
+  margin: 0 2px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.reference:hover {
+  background-color: #1976d2;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+}
+
+.reference:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(25, 118, 210, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(25, 118, 210, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(25, 118, 210, 0); }
+}
+
+.findings-section, .evidence-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-left: 4px solid #003f7f;
+  border-radius: 4px;
+}
+
+.evidence-item {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.quote {
+  font-style: italic;
+  color: #555;
+  border-left: 3px solid #ccc;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Animation for highlighting */
+@keyframes highlightPulse {
+  0% { 
+    background-color: #ffff00;
+    transform: scale(1);
+  }
+  50% { 
+    background-color: #fff700;
+    transform: scale(1.02);
+  }
+  100% { 
+    background-color: #ffff00;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .pdf-section,
+  .analysis-section {
+    flex: none;
+    height: 50vh;
+  }
+  
+  .App-header h1 {
+    font-size: 1.2rem;
+  }
+}
